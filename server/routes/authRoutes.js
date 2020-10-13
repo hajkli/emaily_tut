@@ -5,11 +5,8 @@ module.exports = (app) => {
 		'/auth/google',
 		passport.authenticate('google', {
 			scope: ['profile', 'email'],
-			prompt: 'select_account',
 		})
 	);
-
-	console.log('test');
 
 	app.get('/auth/google/callback', passport.authenticate('google'));
 	app.get('/api/current_user', (req, res) => {
