@@ -24,6 +24,7 @@ passport.use(
 		},
 		(accessToken, refreshToken, profile, done) => {
 			console.log('profile: ', profile);
+			console.log('test this');
 			User.findOne({ googleId: profile.id }).then((existingUser) => {
 				//we'll get promise
 				if (existingUser) {
